@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/34198800/README.md)
 # Alert Sentinel
 
 A desktop emergency-alert console for macOS. It watches the official alert feed for
@@ -16,13 +15,36 @@ countries (MeteoAlarm).
 
 ---
 
+## Screenshots
+
+![The Alert Sentinel console](https://github.com/user-attachments/assets/249fa237-f53d-43c4-b9aa-ef72caebb166)
+
+| Critical alert | Silent mode (law-enforcement alerts) |
+|---|---|
+| ![Tornado warning takeover](https://github.com/user-attachments/assets/89fb8012-debc-4100-af10-9fb84c6b7f60) | ![Alert switched to silent mode](https://github.com/user-attachments/assets/9bd1ee88-ff49-45cf-a79a-7ca798c21c42) |
+
+| On your TV (Chromecast / Nest Hub) | On your phone |
+|---|---|
+| ![Alert card shown on a TV](https://github.com/user-attachments/assets/df45935b-b337-4e80-b74e-becfc68ab1b1) | ![Phone receiver page](https://github.com/user-attachments/assets/764ece8d-0373-4daa-8886-002b91adf2e6) |
+
+Works outside the US too:
+
+![Country picker](https://github.com/user-attachments/assets/a442d5d0-a6e9-49dd-9566-8cb95c87c098)
+
+*Screenshots use test alerts and a sample location.*
+
+---
+
 ## Install
 
 ### Option 1: double-click (easiest)
 
-1. Unzip **Alert-Sentinel.zip** and move the **Alert-Sentinel** folder to your
-   **home folder** (Finder → ⌘⇧H). Keeping it out of Downloads, Desktop, and
-   Documents avoids problems with macOS privacy settings and antivirus tools like
+1. Download **Alert-Sentinel-X.Y.Z.zip** (the newest one) from the
+   [releases page](https://github.com/flyingtrees26/alert-sentinel-updates/releases),
+   double-click it to unzip it, and move the **Alert-Sentinel** folder to your
+   **home folder** (Finder → ⌘⇧H). *(Safari unzips downloads for you, so you may
+   already have the folder.)* Keeping it out of Downloads, Desktop, and Documents
+   avoids problems with macOS privacy settings and antivirus tools like
    Bitdefender Safe Files.
 2. Right-click **Install Alert Sentinel.command** → **Open** → **Open**.
    *(Right-click is only needed the first time; macOS blocks a normal double-click
@@ -41,8 +63,10 @@ Open **Terminal** and paste these one block at a time. They assume the folder is
 
 **1. Go to the app folder**
 ```bash
-cd ~/Alert-Sentinel/alert-sentinel-electron
+cd ~/Alert-Sentinel
 ```
+*(Older copies keep the app in an `alert-sentinel-electron` folder inside. If yours
+does, `cd` into that folder instead, here and below.)*
 
 **2. Get Node.js** *(skip if `node -v` already prints a version)*. This downloads a
 private copy into this folder, checks that it's genuine, and needs no password:
@@ -145,18 +169,21 @@ device on the same Wi-Fi to get alerts there too.
 
 1. In the app, click **Get updates**. It opens the
    [releases page](https://github.com/flyingtrees26/alert-sentinel-updates/releases).
-2. Under the newest release's **Assets**, download the `Alert-Sentinel-update-X.Y.Z.zip`.
-   Leave it in Downloads; don't unzip it.
+2. Under the newest release's **Assets**, download `Alert-Sentinel-X.Y.Z.zip`. It's
+   the same file new users install from. Leave it in Downloads. You don't need to
+   unzip it, but it's fine if you do, or if Safari already did: the button finds
+   the zip or the unzipped **Alert-Sentinel** folder either way.
    *(Don't use the green "Code → Download ZIP" button. That isn't an update.)*
 3. In the app, click **⬇ Install Update** → **Install & Restart**.
 
-The app backs up the files it replaces to `alert-sentinel-electron/.update-backups/`.
+The app backs up the files it replaces to a `.update-backups` folder inside the app folder.
 If the button says it isn't allowed to look in Downloads, use **Choose update file…**
 and pick the zip, or allow Alert Sentinel under System Settings → Privacy & Security →
 Files & Folders.
 
-To update by hand instead, unzip the update and copy its files into
-`alert-sentinel-electron` at the same paths, then quit and reopen the app.
+Each download is complete, so installing the newest one brings any version 1.1.0 or
+later fully up to date. To update by hand instead, unzip it and run
+**Install Alert Sentinel.command** from the new folder.
 
 ---
 
@@ -164,15 +191,15 @@ To update by hand instead, unzip the update and copy its files into
 
 **From Terminal** (no app needed):
 ```bash
-cd ~/Alert-Sentinel/alert-sentinel-electron
+cd ~/Alert-Sentinel
 export PATH="$PWD/.node/bin:$PATH"
 npm start
 ```
 
-**The browser demo:** `alert-sentinel-demo.html` is a standalone page that shows how
-alerts look and sound. Double-click it to open it in your browser. For casting to a
+**The browser demo:** `public/demo.html` is a standalone page that shows how alerts
+look and sound. Double-click it to open it in your browser. For casting to a
 Chromecast and remembering speaker names, it has to be opened from a web address:
-double-click **Start Demo Server.command** (or run `node demo-server.js` in the app
+double-click **Start Demo Server.command** (or run `node demo-server.js` in the
 folder) and it opens `http://localhost:4877/demo.html` in Chrome.
 
 ---
@@ -199,18 +226,17 @@ Alert-Sentinel/
 ├── README.md                       ← this file
 ├── Install Alert Sentinel.command  ← one-click install / reinstall
 ├── Start Demo Server.command       ← opens the browser demo at localhost
-├── alert-sentinel-demo.html        ← standalone browser demo
-└── alert-sentinel-electron/        ← the app itself
-    ├── main.js          app startup, alert checks, casting
-    ├── regions.js       countries and their alert feeds
-    ├── cast.js          Google Home / Nest / Chromecast
-    ├── alert-audio.js   siren + voice audio for speakers
-    ├── alert-card.js    the alert picture shown on TVs
-    ├── updater.js       Install Update button
-    ├── server.js        local server for phones / speakers
-    ├── renderer/        the app's window
-    ├── public/          pages for phones (receiver, offline page, demo)
-    └── build/icon.png   the app icon
+├── sentinel-update.json            ← lets Install Update recognize this download
+├── main.js          app startup, alert checks, casting
+├── regions.js       countries and their alert feeds
+├── cast.js          Google Home / Nest / Chromecast
+├── alert-audio.js   siren + voice audio for speakers
+├── alert-card.js    the alert picture shown on TVs
+├── updater.js       Install Update button
+├── server.js        local server for phones / speakers
+├── renderer/        the app's window
+├── public/          pages for phones (receiver, offline page, demo)
+└── build/icon.png   the app icon
 ```
 
 ## Uninstall
