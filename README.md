@@ -137,8 +137,11 @@ its Dock icon → **Options → Keep in Dock**.
 
 macOS will ask a few things. Click **Allow** on each:
 - **Incoming network connections.** Phones and Google speakers download alerts from this Mac.
-- **Notifications.**
 - **Access to Downloads,** the first time you use **Install Update**.
+
+Notifications don't ask up front. They turn on by themselves the first time an alert
+(or a test alert) comes in. To check or change them: System Settings → Notifications →
+Alert Sentinel.
 
 ---
 
