@@ -195,7 +195,8 @@ later fully up to date. To update by hand instead, unzip it and run
 
 Every 2 minutes the app checks the releases page. If the newest release has
 **EMERGENCY** in its title, the app downloads it, installs it, and restarts by itself,
-no clicks needed. If an alert is playing, it waits until the alert is done. You can
+no clicks needed. If an alert is playing, it waits until the alert is done.
+A notification tells you when an emergency update arrives, and again once it's installed. You can
 turn this off with **Install emergency updates automatically** under Updates.
 
 **To post an emergency release:** make a new release like normal (newer version
