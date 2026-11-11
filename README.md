@@ -153,6 +153,9 @@ Alert Sentinel.
    every time it starts.
 3. Under **Send Test Alert**, try a test to hear and see what a real alert does.
 
+During an alert, press **Esc** (or click **Silence Now**) to stop the sound right away.
+Esc works even when another app is in front.
+
 Settings worth knowing (under Send Test Alert):
 - **Alert length:** 4 to 30 repeats.
 - **Take over screen during alerts (kiosk mode).**
@@ -187,6 +190,17 @@ Files & Folders.
 Each download is complete, so installing the newest one brings any version 1.1.0 or
 later fully up to date. To update by hand instead, unzip it and run
 **Install Alert Sentinel.command** from the new folder.
+
+### Emergency updates
+
+Every 2 minutes the app checks the releases page. If the newest release has
+**EMERGENCY** in its title, the app downloads it, installs it, and restarts by itself,
+no clicks needed. If an alert is playing, it waits until the alert is done. You can
+turn this off with **Install emergency updates automatically** under Updates.
+
+**To post an emergency release:** make a new release like normal (newer version
+number, zip attached) and put **EMERGENCY** in the title, for example
+*Alert Sentinel 1.2.4 EMERGENCY*. Normal releases never install by themselves.
 
 ---
 
@@ -236,6 +250,7 @@ Alert-Sentinel/
 ├── alert-audio.js   siren + voice audio for speakers
 ├── alert-card.js    the alert picture shown on TVs
 ├── updater.js       Install Update button
+├── emergency.js     emergency updates (checks every 2 minutes)
 ├── server.js        local server for phones / speakers
 ├── renderer/        the app's window
 ├── public/          pages for phones (receiver, offline page, demo)
