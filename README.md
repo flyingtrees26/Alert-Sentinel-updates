@@ -139,9 +139,12 @@ macOS will ask a few things. Click **Allow** on each:
 - **Incoming network connections.** Phones and Google speakers download alerts from this Mac.
 - **Access to Downloads,** the first time you use **Install Update**.
 
-Notifications don't ask up front. They turn on by themselves the first time an alert
-(or a test alert) comes in. To check or change them: System Settings → Notifications →
-Alert Sentinel.
+The very first time the app opens, it sends a test notification that says
+**Notifications are enabled**, which also turns notifications on. To check or change
+them later: System Settings → Notifications → Alert Sentinel.
+
+The app keeps a small `launch-history.txt` in `~/Library/Application Support/Alert Sentinel`.
+Updates never replace it; it just gets a new line each time a new version runs.
 
 ---
 
