@@ -140,7 +140,8 @@ macOS will ask a few things. Click **Allow** on each:
 - **Access to Downloads,** the first time you use **Install Update**.
 
 The very first time the app opens, it sends a test notification that says
-**Notifications are enabled**, which also turns notifications on. To check or change
+**Notifications are enabled** (which also turns notifications on), then a **Welcome to
+Alert Sentinel** notification 5 seconds later. To check or change
 them later: System Settings → Notifications → Alert Sentinel.
 
 The app keeps a small `launch-history.txt` in `~/Library/Application Support/Alert Sentinel`.
