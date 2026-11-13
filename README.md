@@ -165,6 +165,9 @@ Esc works even when another app is in front.
 Settings worth knowing (under Send Test Alert):
 - **Alert length:** 4 to 30 repeats.
 - **Take over screen during alerts (kiosk mode).**
+- **🖥 Set tactical background** makes the official Alert Sentinel tactical background
+  your desktop picture. The first time, macOS asks to let Alert Sentinel control
+  System Events; click **OK**.
 - **Keep Mac awake for alerts.** The Mac won't sleep while the app is open (the
   screen still can), so alerts come in overnight. The screen wakes when one arrives.
 
@@ -261,7 +264,7 @@ Alert-Sentinel/
 ├── server.js        local server for phones / speakers
 ├── renderer/        the app's window
 ├── public/          pages for phones (receiver, offline page, demo)
-└── build/icon.png   the app icon
+└── build/          the app icon and the tactical background
 ```
 
 ## Uninstall
