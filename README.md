@@ -146,6 +146,8 @@ them later: System Settings → Notifications → Alert Sentinel.
 
 The app keeps a small `launch-history.txt` in `~/Library/Application Support/Alert Sentinel`.
 Updates never replace it; it just gets a new line each time a new version runs.
+To see the first-launch notifications again, quit with **⌘Q**, delete the whole
+`launch-history.txt` file (not just lines inside it), and reopen the app.
 
 ---
 
