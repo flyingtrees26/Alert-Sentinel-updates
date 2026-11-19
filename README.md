@@ -183,6 +183,14 @@ devices and this Mac then wait that long so everything is heard together. Use
 
 **Turn On** wakes a TV through its Chromecast (turn on HDMI-CEC / Anynet+ on the TV).
 
+**Cameras:** add your Wi-Fi IP cameras under **Cameras** to watch them live in the app.
+Type a name and the camera's address and click **+ Add camera**. Most cameras give an
+**RTSP** address (for example Reolink `rtsp://user:pass@IP:554/h264Preview_01_sub`, Tapo
+`rtsp://user:pass@IP:554/stream2`); a web address for a live picture or a snapshot works
+too. **Where do I find my camera's address?** under the form lists more brands. Click a
+camera to see it full screen. Camera passwords are saved only on this Mac. Google Nest,
+Ring, Blink and Arlo cameras don't offer these addresses, so they can't be added.
+
 **Phones and other computers:** open the address shown under **Network Access** on any
 device on the same Wi-Fi to get alerts there too.
 
@@ -268,6 +276,7 @@ Alert-Sentinel/
 ├── alert-audio.js   siren + voice audio for speakers
 ├── alert-card.js    the alert picture shown on TVs
 ├── updater.js       Install Update button
+├── cameras.js       Wi-Fi IP camera live view
 ├── emergency.js     emergency updates (checks every 2 minutes)
 ├── server.js        local server for phones / speakers
 ├── renderer/        the app's window
