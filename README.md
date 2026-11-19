@@ -172,7 +172,9 @@ Settings worth knowing (under Send Test Alert):
   screen still can), so alerts come in overnight. The screen wakes when one arrives.
 
 **Google Home / Nest / Chromecast:** found automatically on your Wi-Fi. Check the ones
-that should sound alerts. TVs and Nest Hubs also show the alert on screen. **Turn On**
+that should sound alerts. TVs and Nest Hubs also show the alert on screen.
+When an alert comes in, the app gets every checked device ready first, then starts
+them all (and this Mac) at the same moment, so a slower TV doesn't fall behind. **Turn On**
 wakes a TV through its Chromecast (turn on HDMI-CEC / Anynet+ on the TV).
 
 **Phones and other computers:** open the address shown under **Network Access** on any
