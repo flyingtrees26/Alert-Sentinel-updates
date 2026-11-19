@@ -174,8 +174,13 @@ Settings worth knowing (under Send Test Alert):
 **Google Home / Nest / Chromecast:** found automatically on your Wi-Fi. Check the ones
 that should sound alerts. TVs and Nest Hubs also show the alert on screen.
 When an alert comes in, the app gets every checked device ready first, then starts
-them all (and this Mac) at the same moment, so a slower TV doesn't fall behind. **Turn On**
-wakes a TV through its Chromecast (turn on HDMI-CEC / Anynet+ on the TV).
+them all (and this Mac) at the same moment, so a slower TV doesn't fall behind.
+If one device still sounds later than the others (TVs often take a second or two to
+make sound), set its **Runs behind** to how late it is, for example 2 s. The other
+devices and this Mac then wait that long so everything is heard together. Use
+**Send Test Alert** to check, and adjust until they line up.
+
+**Turn On** wakes a TV through its Chromecast (turn on HDMI-CEC / Anynet+ on the TV).
 
 **Phones and other computers:** open the address shown under **Network Access** on any
 device on the same Wi-Fi to get alerts there too.
