@@ -162,6 +162,11 @@ To see the first-launch notifications again, quit with **⌘Q**, delete the whol
 During an alert, press **Esc** (or click **Silence Now**) to stop the sound right away.
 Esc works even when another app is in front.
 
+How loud each alert is:
+- **Warnings and emergencies** (Tornado Warning, Flash Flood Warning…): full siren every round.
+- **Watches** (Tornado Watch…) and civil/law-enforcement notices: siren for 2 rounds, then silent captions.
+- **Statements, advisories and outlooks** (Special Weather Statement, Dense Fog Advisory…): shown and logged quietly, no siren.
+
 Settings worth knowing (under Send Test Alert):
 - **Alert length:** 4 to 30 repeats.
 - **Take over screen during alerts (kiosk mode).**
