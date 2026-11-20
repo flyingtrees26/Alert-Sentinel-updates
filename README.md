@@ -1,6 +1,6 @@
 # Alert Sentinel
 
-A desktop emergency-alert console for macOS. It watches the official alert feed for
+A desktop emergency-alert console for macOS and Windows. It watches the official alert feed for
 your area and, when a warning comes in, sounds a siren, reads the alert aloud, takes
 over the screen, and can push the alert to Google Home / Nest speakers, Chromecast
 TVs, and phones on your Wi-Fi.
@@ -35,7 +35,7 @@ Works outside the US too:
 
 ---
 
-## Install
+## Install on a Mac
 
 ### Option 1: double-click (easiest)
 
@@ -133,9 +133,31 @@ open "$APP"
 From now on, open it with **Spotlight** (⌘Space → *Alert Sentinel*), or right-click
 its Dock icon → **Options → Keep in Dock**.
 
+## Install on Windows (10 or 11)
+
+1. Download **Alert-Sentinel-X.Y.Z.zip** (the newest one) from the
+   [releases page](https://github.com/flyingtrees26/alert-sentinel-updates/releases).
+   Right-click it → **Extract All…**, and put the **Alert-Sentinel** folder somewhere it
+   can stay, such as your user folder (`C:\Users\you\Alert-Sentinel`).
+2. Open the folder and double-click **Install Alert Sentinel.bat**. If Windows says
+   *"Windows protected your PC"*, click **More info** → **Run anyway**. (That warning
+   shows for any script downloaded from the internet.)
+3. Wait for it to finish. The first run downloads a few hundred MB. No administrator
+   password is needed. It opens Alert Sentinel and adds it to the **Start Menu** and
+   your **Desktop**.
+
+The first time, Windows Firewall may ask whether Alert Sentinel (or Electron) can use
+your network: tick **Private networks** and click **Allow**, so speakers and phones on
+your Wi-Fi can get alerts. Leave the app open (you can minimize it); closing its
+window quits it on Windows.
+
+On Windows, the voice uses Windows' built-in speech, **Set tactical background** sets
+the Windows desktop background, and updating works the same way (**Get updates**, then
+**Install Update**). The browser demo is **Start Demo Server.bat**.
+
 ### First launch
 
-macOS will ask a few things. Click **Allow** on each:
+On a Mac, macOS will ask a few things. Click **Allow** on each:
 - **Incoming network connections.** Phones and Google speakers download alerts from this Mac.
 - **Access to Downloads,** the first time you use **Install Update**.
 
@@ -270,6 +292,9 @@ Alert-Sentinel/
 ├── README.md                       ← this file
 ├── Install Alert Sentinel.command  ← one-click install / reinstall
 ├── Start Demo Server.command       ← opens the browser demo at localhost
+├── Install Alert Sentinel.bat      ← Windows: one-click install / reinstall
+├── install-windows.ps1             ← the Windows installer (run by the .bat)
+├── Start Demo Server.bat           ← Windows: opens the browser demo
 ├── sentinel-update.json            ← lets Install Update recognize this download
 ├── main.js          app startup, alert checks, casting
 ├── regions.js       countries and their alert feeds
