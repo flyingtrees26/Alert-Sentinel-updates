@@ -167,6 +167,10 @@ How loud each alert is:
 - **Watches** (Tornado Watch…) and civil/law-enforcement notices: siren for 2 rounds, then silent captions.
 - **Statements, advisories and outlooks** (Special Weather Statement, Dense Fog Advisory…): shown and logged quietly, no siren.
 
+**Alert Log:** click any alert to see its full transcript: what was read aloud, the full
+description, what to do, the area, who sent it, and when it starts and ends. You can have
+it read aloud again or copy the text. The last 50 alerts are kept, even after a restart.
+
 Settings worth knowing (under Send Test Alert):
 - **Alert length:** 4 to 30 repeats.
 - **Take over screen during alerts (kiosk mode).**
